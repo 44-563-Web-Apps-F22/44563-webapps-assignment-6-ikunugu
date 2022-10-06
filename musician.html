@@ -41,6 +41,31 @@ function checkGuess (){
     }
 }
 </script>
+<div class="container">
+    <img id="image" src="termites.jpg" width="100" height="100" onclick="swapimage()" alt="termites">
+</div>
+<script>
+useImage=1
+function swapimage(){
+    switch(useImage)
+    {
+        case 1:
+        document.getElementById('image').src = "termites.jpg" ;
+        useImage=useImage + 1;
+        break;
+        case 2:
+        document.getElementById('image').src="grasshoper.jpg";
+        useImage=useImage + 1;
+        break;
+        case 3:
+        document.getElementById('image').src="ant.jpg";
+        useImage=1;
+        break;
+
+    }
+
+}
+</script>
 
 </body>
 </html> 
