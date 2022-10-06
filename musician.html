@@ -2,8 +2,27 @@
 <html>
 <head>
     <title>Lab Assignment-06</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+    .button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
 </head>
 <body>
+
 <h1>Musician guess by Indu Sri Kunuguntla</h1>
 <h2>Getting input</h2>
 
@@ -13,8 +32,7 @@
 
     <label for="form1_nick">Guess the musician </label>
     <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
-
-    <input type="button" onclick="checkGuess()" value="Check the guess">
+    <input type="button" class="button" onclick="checkGuess()"  value="Check the guess">
 </form>
 
 
@@ -23,6 +41,8 @@
 <script>  
 correct=0
 wrong = 0
+a=0
+b=0
 function checkGuess (){
     console.log("Getting form values")
     age = document.getElementById("form1_age").value
@@ -32,10 +52,20 @@ function checkGuess (){
     out = document.getElementById("result")
     if(age == nick){
         correct=correct+1
+        a=a+1
         out.innerHTML = "correct - "+correct+","+"wrong - "+wrong
         alert("You got it right")
     } else {
         wrong=wrong+1
+        b=b+1
+        if(a==0 && b%3==0 && b!=0){
+            alert("Sorry,game over")
+            return
+        }
+        else if(a>0){
+            a=0
+            b=0
+        }
         out.innerHTML = "correct - "+correct+","+"wrong - "+wrong
         alert("Wrong Musician")
     }

@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html>
- 
 <body>
-<title>Vacation</title>
+<head>
+    <title>Vacation</title>
+<style>
+    .checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+</style>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 <h2>Indu Sri Kunuguntla Selects A Vacation</h2>
 
 <div class="container">
     <form>
        <div class="form-group">
-        <input type="checkbox" id="air" name="vacationtime" value="true">
+        <input type="checkbox" class="checkbox" id="air" name="vacationtime" value="true">
         <label for="air">Travel by Air</label></div> <br>
         <div class="form-group">
-        <input type="checkbox" id="domestic" name="vacationtime" value="true">
+        <input type="checkbox" class="checkbox" id="domestic" name="vacationtime" value="true">
         <label for="domestic">Domestic</label> </div><br>
         <div class="form-group">
-        <input type="checkbox" id="resort" name="vacationtime" value="false">
+        <input type="checkbox" class="checkbox" id="resort" name="vacationtime" value="false">
         <label for="resort">Resort</label> </div><br>
         <div class="form-group">
-        <input type="button" class="btn btn-warning" value="Select a vacation" onclick="selectVacation()">
+        <input type="button" class="btn btn-warning" color="red" value="Select a vacation" onclick="selectVacation()">
     </div>
     </form>
     <br>
